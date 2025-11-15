@@ -4,6 +4,75 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 >**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
+## First Time Setup (After Cloning)
+
+### Prerequisites
+
+- **Node.js** (v14 or newer)
+- **npm** or **Yarn**
+- **Java JDK 17** (for Android development)
+- **Android Studio** (for Android development)
+- **Xcode** (for iOS development - macOS only)
+
+### Installation Steps
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   # OR
+   yarn install
+   ```
+
+2. **For Android Development (macOS):**
+   
+   a. **Install Homebrew** (if not already installed):
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+   
+   b. **Install Java JDK 17**:
+   ```bash
+   brew install --cask zulu@17
+   ```
+   
+   c. **Add environment variables** to your `~/.zshrc`:
+   ```bash
+   # Java for React Native
+   export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+   export PATH=$PATH:$JAVA_HOME/bin
+   
+   # Android SDK for React Native
+   export ANDROID_HOME=$HOME/Library/Android/sdk
+   export PATH=$PATH:$ANDROID_HOME/emulator
+   export PATH=$PATH:$ANDROID_HOME/platform-tools
+   export PATH=$PATH:$ANDROID_HOME/tools
+   export PATH=$PATH:$ANDROID_HOME/tools/bin
+   ```
+   
+   d. **Reload your shell**:
+   ```bash
+   source ~/.zshrc
+   ```
+   
+   e. **Make gradlew executable**:
+   ```bash
+   chmod +x android/gradlew
+   ```
+
+3. **For iOS Development (macOS only):**
+   ```bash
+   cd ios
+   pod install
+   cd ..
+   ```
+
+4. **Create an Android Virtual Device:**
+   - Open Android Studio
+   - Go to **Tools > Device Manager**
+   - Create a new virtual device if you don't have one
+
+For detailed troubleshooting, see [docs/ANDROID_TROUBLESHOOTING.md](docs/ANDROID_TROUBLESHOOTING.md).
+
 ## Step 1: Start the Metro Server
 
 First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
@@ -66,7 +135,10 @@ You've successfully run and modified your React Native App. :partying_face:
 
 # Troubleshooting
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+If you can't get this to work, see the following resources:
+
+- **Android Issues:** [docs/ANDROID_TROUBLESHOOTING.md](docs/ANDROID_TROUBLESHOOTING.md)
+- **General Issues:** [React Native Troubleshooting](https://reactnative.dev/docs/troubleshooting)
 
 # Learn More
 
